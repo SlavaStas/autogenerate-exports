@@ -31,7 +31,7 @@ fs.readdir(absolutePath, (err, files) => {
 
   // Generate the index.ts file in the same directory
   const indexPath = path.join(absolutePath, "index.ts");
-  fs.writeFile(indexPath, exportStatements.join("\n"), (err) => {
+  fs.writeFile(indexPath, exportStatements.join("\n") + "\n", (err) => {
     if (err) throw err;
     console.log(`index.ts created successfully at ${indexPath}`);
   });
